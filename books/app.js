@@ -1,6 +1,7 @@
 (function(){
   'use strict';
-  angular.module('BookListApp',[])
+  angular.module('BookListApp',['common'])
+  //angular.module('BookListApp',[])
   // angular.module('BookListApp',['ngResource'])
   .controller('BookListController',BookListController)
   .service('BookListService',BookListService);

@@ -5,13 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
+    <script src="common/common.module.js"></script>
+    <script src="common/loading/loading.component.js"></script>
+    <script src="common/loading/loading.interceptor.js"></script>
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/common.css">
     <title>Book List</title>
   </head>
   <body>
+
+    <!-- Fixed position loading indicator -->
+    <loading class="loading-indicator"></loading>
+
     <div class="container" ng-controller="BookListController as bookList">
     <h1>Book List</h1>
+
+
 
     <div class="form-group">
         <input type="text" placeholder="book title"
