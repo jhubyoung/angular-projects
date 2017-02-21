@@ -74,6 +74,7 @@
 
     bookList.saveNewBookTitle = function(){
       var promise = BookListService.addBook(bookList.newBookTitle);
+      bookList.newBookTitle = "";
       promise.then(function(response){
         bookList.books = response.data;
         //console.log("new book added, bookList.books: ",bookList.books);
