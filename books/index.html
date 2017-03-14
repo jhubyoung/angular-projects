@@ -20,9 +20,6 @@
 
     <div class="container" ng-controller="BookListController as bookList">
     <h1>Book List</h1>
-
-
-
     <div class="form-group">
         <input type="text" placeholder="book title"
         class="form-control" ng-model="bookList.newBookTitle">
@@ -40,7 +37,15 @@
         <button class="btn btn-primary" ng-click="bookList.deleteBook(book.id);">Delete</button> 
 		{{book.title}}</h3>
     </div>
-
   </div>
+  
+  <div class="container" ng-controller="ReadBooksController as readBooks">
+    <h1>Books Read</h1>
+    <br><br>
+    <div class="form-group">
+      <h3 ng-repeat="book in readBooks.books">{{book.title}}</h3>
+    </div>
+  </div>
+  
   </body>
 </html>
