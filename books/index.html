@@ -41,7 +41,6 @@
   
   <div class="container" ng-controller="ReadBooksController as readBooks">
     <h1>Books Read</h1>
-    <br><br>
     <div class="form-group">
       <h3 ng-repeat="book in readBooks.books">{{book.date | date:'MM/dd/yyyy'}}: {{book.title}}</h3>
     </div>
