@@ -4,6 +4,7 @@
   //angular.module('BookListApp',[])
   // angular.module('BookListApp',['ngResource'])
   .controller('BookListController',BookListController)
+  .controller('ReadBooksController',ReadBooksController)
   .service('BookListService',BookListService);
   // .factory('BookListFactory',BookListFactory);
 
@@ -65,6 +66,19 @@
       });
       return promise;
     };
+	 service.getReadBooks = function(){
+      var endpoint5=endpoint+"readbooks";
+      var promise = $http({
+        url: endpoint5
+      });
+      promise.then(function (result){
+        var items = result.data;
+        return items;
+      }, function (errorResponse){
+        //console.log("error message: ", errorResponse.message);
+      });
+      return promise;
+    };
   }
 
   //$resource-based REST call.  NOT USED
@@ -107,6 +121,17 @@
         //console.log("book read, bookList.books: ",bookList.books);
       });
     }
+  }
+  
+	ReadBooksController.$inject = ['BookListService','$scope'];
+  function ReadBooksController(BookListService,$scope){
+    //$scope.source = BookListService;
+    var readBooks = this;
+    var promise = BookListService.getReadBooks();
+    promise.then(function(response){
+      readBooks.books = response.data;
+      //console.log("bookList.books: ",bookList.books);
+    });
   }
 
 })();
