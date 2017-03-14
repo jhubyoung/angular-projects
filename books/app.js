@@ -14,7 +14,8 @@
     var service=this;
     var endpoint = "https://shielded-ridge-23814.herokuapp.com/";
     service.getBooks = function(){
-      var endpoint1=endpoint+"allbooks";
+      //var endpoint1=endpoint+"allbooks";
+      var endpoint1=endpoint+"unreadbooks";
       var promise = $http({
         url: endpoint1
       });
