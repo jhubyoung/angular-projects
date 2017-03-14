@@ -36,8 +36,9 @@
 
     <div class="form-group">
       <h3 ng-repeat="book in bookList.books">
-        <button class="btn btn-primary" ng-click="bookList.deleteBook(book.id);">
-          Delete</button> {{book.title}}</h3>
+        <button class="btn btn-primary" ng-click="bookList.readBook(book.id);">Read</button>
+        <button class="btn btn-primary" ng-click="bookList.deleteBook(book.id);">Delete</button> 
+		{{book.title}}</h3>
     </div>
 
   </div>
