@@ -52,6 +52,19 @@
       });
       return promise;
     };
+    service.readBook = function(id){
+      var endpoint4=endpoint+"readbook/" + id;
+      var promise = $http({
+        url: endpoint4
+      });
+      promise.then(function (result){
+        var items = result.data;
+        return items;
+      }, function (errorResponse){
+        //console.log("error message: ", errorResponse.message);
+      });
+      return promise;
+    };
   }
 
   //$resource-based REST call.  NOT USED
@@ -85,6 +98,13 @@
       promise.then(function(response){
         bookList.books = response.data;
         //console.log("book deleted, bookList.books: ",bookList.books);
+      });
+    }
+    bookList.readBook = function(id){
+      var promise = BookListService.readBook(id);
+      promise.then(function(response){
+        bookList.books = response.data;
+        //console.log("book read, bookList.books: ",bookList.books);
       });
     }
   }
