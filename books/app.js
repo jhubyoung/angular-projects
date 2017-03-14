@@ -75,7 +75,7 @@
         var items = result.data;
         return items;
       }, function (errorResponse){
-        //console.log("error message: ", errorResponse.message);
+        console.log("error message: ", errorResponse.message);
       });
       return promise;
     };
@@ -130,7 +130,7 @@
     var promise = BookListService.getReadBooks();
     promise.then(function(response){
       readBooks.books = response.data;
-      //console.log("bookList.books: ",bookList.books);
+      console.log("readBooks.books: ",readBooks.books);
     });
   }
 
