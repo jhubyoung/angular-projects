@@ -164,7 +164,7 @@
 				console.log("ctrl, readBooks.books: ",readBooks.books);
 				console.log("ctrl, BookListService.srvReadBooks: ",BookListService.srvReadBooks);
 			 });
-			 
+		/*	 
 		(function () {
             $scope.$watch(function () {
 					console.log("ctrl:watch");
@@ -180,6 +180,7 @@
                 }
             });
         }());
+		  */
 		  
 		 //});
 		 //$scope.$on('bookListEvent', function(event, promise) {
