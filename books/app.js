@@ -13,6 +13,8 @@
   function BookListService($http){
     var service=this;
     var endpoint = "https://shielded-ridge-23814.herokuapp.com/";
+	 var readBooks;
+	 
     service.getBooks = function(){
       //var endpoint1xxx=endpoint+"allbooks";
       var endpoint1=endpoint+"unreadbooks";
@@ -27,6 +29,7 @@
       });
       return promise;
     };
+	 
     service.addBook = function(title){
       var endpoint2=endpoint+"addbook";
       var promise = $http({
@@ -41,6 +44,7 @@
       });
       return promise;
     };
+	 
     service.deleteBook = function(id){
       var endpoint3=endpoint+"deletebook/" + id;
       var promise = $http({
@@ -54,6 +58,7 @@
       });
       return promise;
     };
+	 
     service.readBook = function(id){
       var endpoint4=endpoint+"readbook/" + id;
       var promise = $http({
@@ -67,6 +72,7 @@
       });
       return promise;
     };
+	 
 	 service.getReadBooks = function(){
       var endpoint5=endpoint+"readbooks";
       var promise = $http({
@@ -74,6 +80,7 @@
       });
       promise.then(function (result){
         var items = result.data;
+		  console.log("service: getReadBooks");
         return items;
       }, function (errorResponse){
         console.log("error message: ", errorResponse.message);
