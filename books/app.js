@@ -173,7 +173,8 @@
 					console.log("ctrl:watch");
                 if ( newVal !== oldVal ) {
 						 console.log("ctrl:watch. oldVal: ",oldVal," newVal: ",newVal);
-						 readBooks.books=newVal;
+						 //readBooks.books=newVal;
+						 readBooks.books=BookListService.srvReadBooks;
                 }
             });
         }());
