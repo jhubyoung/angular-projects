@@ -22,8 +22,8 @@
       });
       promise.then(function (result){
         var items = result.data;
-		  console.log("service: getBooks");
-		  console.log("service: service.srvReadBooks: ",service.srvReadBooks);
+		  //console.log("service: getBooks");
+		  //console.log("service: service.srvReadBooks: ",service.srvReadBooks);
         return items;
       }, function (errorResponse){
         //console.log("error message: ", errorResponse.message);
@@ -39,8 +39,8 @@
       });
       promise.then(function (result){
         var items = result.data;
-		  console.log("service: addBook");
-		  console.log("service: service.srvReadBooks: ",service.srvReadBooks);
+		  //console.log("service: addBook");
+		  //console.log("service: service.srvReadBooks: ",service.srvReadBooks);
         return items;
       }, function (errorResponse){
         console.log("error message: ", errorResponse.message);
@@ -55,8 +55,8 @@
       });
       promise.then(function (result){
         var items = result.data;
-		  console.log("service: deleteBook");
-		  console.log("service: service.srvReadBooks: ",service.srvReadBooks);
+		  //console.log("service: deleteBook");
+		  //console.log("service: service.srvReadBooks: ",service.srvReadBooks);
         return items;
       }, function (errorResponse){
         //console.log("error message: ", errorResponse.message);
@@ -129,7 +129,7 @@
       bookList.newBookTitle = "";
       promise.then(function(response){
         bookList.books = response.data;
-        console.log("new book added, bookList.books: ",bookList.books);
+        //console.log("new book added, bookList.books: ",bookList.books);
       });
     }
     bookList.deleteBook = function(id){
@@ -143,7 +143,7 @@
       var promise = BookListService.readBook(id);
       promise.then(function(response){
         bookList.books = response.data;
-        console.log("ctrl, book read, bookList.books: ",bookList.books);
+        //console.log("ctrl, book read, bookList.books: ",bookList.books);
       });
     }
   }
@@ -154,7 +154,7 @@
 		 var promise = BookListService.getReadBooks();
 			 promise.then(function(response){
 				readBooks.books = response.data;
-				console.log("ctrl, readBooks.books: ",readBooks.books);
+				//console.log("ctrl, readBooks.books: ",readBooks.books);
 				console.log("ctrl, BookListService.srvReadBooks: ",BookListService.srvReadBooks);
 			 });
 			 
