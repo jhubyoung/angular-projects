@@ -131,14 +131,12 @@
     //$scope.source = BookListService;
     var readBooks = this;
 	 $scope.$on('bookList', function(event, bookList) {
-    var promise = BookListService.getReadBooks();
-    promise.then(function(response){
-		//$scope.$digest();
-      readBooks.books = response.data;
-      console.log("readBooks.books: ",readBooks.books);
-    }, function (errorResponse){
-        console.log("ReadBooksController, error message: ", errorResponse.message);
-      });
+		 var promise = BookListService.getReadBooks();
+		 promise.then(function(response){
+			//$scope.$digest();
+			readBooks.books = response.data;
+			console.log("readBooks.books: ",readBooks.books);
+		 });
 	 },true);
   }
 
