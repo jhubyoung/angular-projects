@@ -23,7 +23,7 @@
       promise.then(function (result){
         var items = result.data;
 		  console.log("service: getBooks");
-		  console.log("service: srvReadBooks: ",srvReadBooks);
+		  console.log("service: service.srvReadBooks: ",service.srvReadBooks);
         return items;
       }, function (errorResponse){
         //console.log("error message: ", errorResponse.message);
@@ -40,7 +40,7 @@
       promise.then(function (result){
         var items = result.data;
 		  console.log("service: addBook");
-		  console.log("service: srvReadBooks: ",srvReadBooks);
+		  console.log("service: service.srvReadBooks: ",service.srvReadBooks);
         return items;
       }, function (errorResponse){
         console.log("error message: ", errorResponse.message);
