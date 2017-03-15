@@ -73,8 +73,10 @@
         var items = result.data;
 		  console.log("service: readBook");
 		  console.log("service: srvReadBooks: ",srvReadBooks);
+		  console.log("service: readBook.items: ",items);
 		  srvReadBooks.splice(0, srvReadBooks.length);
 		  console.log("service: srvReadBooks: ",srvReadBooks);
+		  console.log("service: readBook.items: ",items);
         return items;
       }, function (errorResponse){
         //console.log("error message: ", errorResponse.message);
@@ -139,7 +141,7 @@
 			//$scope.$digest();
         bookList.books = response.data;
 		  //$rootScope.$broadcast('bookListEvent', bookList);
-        console.log("book read, bookList.books: ",bookList.books);
+        console.log("srv, book read, bookList.books: ",bookList.books);
       });
     }
   }
