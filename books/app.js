@@ -164,6 +164,17 @@
 				console.log("ctrl, readBooks.books: ",readBooks.books);
 				console.log("ctrl, BookListService.srvReadBooks: ",BookListService.srvReadBooks);
 			 });
+			 
+		
+		(function () {
+            $scope.$watch(BookListService.srvReadBooks, function (newVal, oldVal) {
+                if ( newVal !== oldVal ) {
+						 console.log("ctrl:watch. oldVal: ",oldVal," newVal: ",newVal);
+                }
+            });
+        }());
+		  
+		  
 		/*	 
 		(function () {
             $scope.$watch(function () {
