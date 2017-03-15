@@ -56,7 +56,7 @@
       promise.then(function (result){
         var items = result.data;
 		  console.log("service: deleteBook");
-		  console.log("service: srvReadBooks: ",srvReadBooks);
+		  console.log("service: service.srvReadBooks: ",service.srvReadBooks);
         return items;
       }, function (errorResponse){
         //console.log("error message: ", errorResponse.message);
@@ -72,10 +72,10 @@
       promise.then(function (result){
         var items = result.data;
 		  console.log("service: readBook");
-		  console.log("service: srvReadBooks: ",srvReadBooks);
+		  console.log("service: service.srvReadBooks: ",service.srvReadBooks);
 		  console.log("service: readBook.items (unread): ",items);
 		  service.srvReadBooks.splice(0, service.srvReadBooks.length);
-		  console.log("service: srvReadBooks: ",srvReadBooks);
+		  console.log("service: service.srvReadBooks: ",service.srvReadBooks);
 		  console.log("service: readBook.items (unread): ",items);
         return items;
       }, function (errorResponse){
