@@ -120,6 +120,7 @@
       promise.then(function(response){
 			//$scope.$digest();
         bookList.books = response.data;
+		  $rootScope.$broadcast('bookList', bookList);
         console.log("book read, bookList.books: ",bookList.books);
       });
     }
