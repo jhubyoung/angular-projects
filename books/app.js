@@ -136,7 +136,9 @@
 		//$scope.$digest();
       readBooks.books = response.data;
       console.log("readBooks.books: ",readBooks.books);
-    });
+    }, function (errorResponse){
+        console.log("ReadBooksController, error message: ", errorResponse.message);
+      });
 	 },true);
   }
 
