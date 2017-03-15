@@ -37,7 +37,7 @@
         var items = result.data;
         return items;
       }, function (errorResponse){
-        //console.log("error message: ", errorResponse.message);
+        console.log("error message: ", errorResponse.message);
       });
       return promise;
     };
@@ -105,7 +105,7 @@
       bookList.newBookTitle = "";
       promise.then(function(response){
         bookList.books = response.data;
-        //console.log("new book added, bookList.books: ",bookList.books);
+        console.log("new book added, bookList.books: ",bookList.books);
       });
     }
     bookList.deleteBook = function(id){
@@ -119,7 +119,7 @@
       var promise = BookListService.readBook(id);
       promise.then(function(response){
         bookList.books = response.data;
-        //console.log("book read, bookList.books: ",bookList.books);
+        console.log("book read, bookList.books: ",bookList.books);
       });
     }
   }
