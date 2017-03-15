@@ -60,6 +60,7 @@
         url: endpoint4
       });
       promise.then(function (result){
+			$scope.$digest();
         var items = result.data;
         return items;
       }, function (errorResponse){
