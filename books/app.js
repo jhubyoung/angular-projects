@@ -164,6 +164,8 @@
 		(function () {
             $scope.$watch(function () {
 					console.log("ctrl, watch");
+					console.log("ctrl, BookListService.srvReadBooks: ",BookListService.srvReadBooks);
+					console.log("ctrl, readBooks.books: ",readBooks.books);
                 return BookListService.srvReadBooks;
             }, function (newVal, oldVal) {
                 if ( newVal !== oldVal ) {
