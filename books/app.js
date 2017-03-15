@@ -162,9 +162,8 @@
             $scope.$watch(function () {
                 return BookListService.srvReadBooks;
             }, function (newVal, oldVal) {
-                if ( newValue !== oldValue ) {
+                if ( newVal !== oldVal ) {
 						 console.log("ctrl, watch. oldVal: ",oldVal," newVal: ",newVal);
-                    $scope.students = newVal;
                 }
             });
         }());
