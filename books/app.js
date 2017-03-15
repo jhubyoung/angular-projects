@@ -167,7 +167,7 @@
 			 
 		
 		(function () {
-            $scope.$watch(function(){}
+            $scope.$watch(function(){
 				return BookListService.srvReadBooks;
 		}, function (newVal, oldVal) {
 					console.log("ctrl:watch");
