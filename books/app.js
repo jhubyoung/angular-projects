@@ -129,12 +129,14 @@
   function ReadBooksController(BookListService,$scope){
     $scope.source = BookListService;
     var readBooks = this;
+	 $scope.$watch('bookList', function() {
     var promise = BookListService.getReadBooks();
     promise.then(function(response){
 		//$scope.$digest();
       readBooks.books = response.data;
       console.log("readBooks.books: ",readBooks.books);
     });
+	 }
   }
 
 })();
