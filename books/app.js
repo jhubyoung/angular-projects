@@ -120,7 +120,7 @@
       promise.then(function(response){
 			//$scope.$digest();
         bookList.books = response.data;
-		  $rootScope.$broadcast('bookList', bookList);
+		  $rootScope.$broadcast('bookListEvent', bookList);
         console.log("book read, bookList.books: ",bookList.books);
       });
     }
@@ -137,6 +137,9 @@
 			readBooks.books = response.data;
 			console.log("readBooks.books: ",readBooks.books);
 		 });
+		 $scope.$on('bookListEvent', function(event, args) {
+			 console.log("ReadBooksController, caught bookListEvent");
+		 }
 	 //},true);
   }
 
