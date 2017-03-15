@@ -136,7 +136,7 @@
       readBooks.books = response.data;
       console.log("readBooks.books: ",readBooks.books);
     });
-	 }
+	 });
   }
 
 })();
