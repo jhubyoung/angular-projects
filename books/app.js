@@ -91,7 +91,7 @@
   }
 
   BookListController.$inject = ['BookListService','$scope'];
-  function BookListController(BookListService,$scope){
+  function BookListController(BookListService,$scope,$rootScope){
     $scope.source = BookListService;
     var bookList = this;
     var promise = BookListService.getBooks();
