@@ -168,6 +168,7 @@
 		
 		(function () {
             $scope.$watch(BookListService.srvReadBooks, function (newVal, oldVal) {
+					console.log("ctrl:watch");
                 if ( newVal !== oldVal ) {
 						 console.log("ctrl:watch. oldVal: ",oldVal," newVal: ",newVal);
                 }
