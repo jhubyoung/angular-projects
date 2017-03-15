@@ -118,7 +118,7 @@
     bookList.readBook = function(id){
       var promise = BookListService.readBook(id);
       promise.then(function(response){
-			$scope.$digest();
+			//$scope.$digest();
         bookList.books = response.data;
         console.log("book read, bookList.books: ",bookList.books);
       });
