@@ -90,7 +90,7 @@
     });
   }
 
-  BookListController.$inject = ['BookListService','$scope'];
+  BookListController.$inject = ['BookListService','$scope','$rootScope'];
   function BookListController(BookListService,$scope,$rootScope){
     $scope.source = BookListService;
     var bookList = this;
@@ -126,7 +126,7 @@
     }
   }
   
-	ReadBooksController.$inject = ['BookListService','$scope'];
+	ReadBooksController.$inject = ['BookListService','$scope','$rootScope'];
   function ReadBooksController(BookListService,$scope,$rootScope){
     //$scope.source = BookListService;
     var readBooks = this;
