@@ -74,9 +74,9 @@
 		  console.log("service: readBook");
 		  console.log("service: service.srvReadBooks: ",service.srvReadBooks);
 		  console.log("service: readBook.items (unread): ",items);
-		  service.srvReadBooks.splice(0, service.srvReadBooks.length);
-		  console.log("service: service.srvReadBooks: ",service.srvReadBooks);
-		  console.log("service: readBook.items (unread): ",items);
+		  //service.srvReadBooks.splice(0, service.srvReadBooks.length);
+		  //console.log("service: service.srvReadBooks: ",service.srvReadBooks);
+		  //console.log("service: readBook.items (unread): ",items);
         return items;
       }, function (errorResponse){
         //console.log("error message: ", errorResponse.message);
@@ -142,7 +142,7 @@
 			//$scope.$digest();
         bookList.books = response.data;
 		  //$rootScope.$broadcast('bookListEvent', bookList);
-        console.log("srv, book read, bookList.books: ",bookList.books);
+        console.log("ctrl, book read, bookList.books: ",bookList.books);
       });
     }
   }
@@ -170,10 +170,10 @@
                 return BookListService.srvReadBooks;
             }, function (newVal, oldVal) {
                 if ( newVal !== oldVal ) {
-						 console.log("ctrl, watch. oldVal: ",oldVal," newVal: ",newVal);
+						 console.log("ctrl:watch. oldVal: ",oldVal," newVal: ",newVal);
                 }
                 else {
-						 console.log("ctrl, watch (else). oldVal: ",oldVal," newVal: ",newVal);
+						 console.log("ctrl:watch (else). oldVal: ",oldVal," newVal: ",newVal);
                 }
             });
         }());
