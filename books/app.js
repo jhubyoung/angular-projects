@@ -77,7 +77,7 @@
 		  //service.srvReadBooks.splice(0, service.srvReadBooks.length);
 		  //console.log("service: service.srvReadBooks: ",service.srvReadBooks);
 		  //console.log("service: readBook.items (unread): ",items);
-		  service.srvReadBooks=service.getReadBooks();
+		  var tempItems=service.getReadBooks();
 		  console.log("service: service.srvReadBooks: ",service.srvReadBooks);
 		  console.log("----------------------");
         return items;
