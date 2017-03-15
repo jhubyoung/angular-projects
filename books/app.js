@@ -93,7 +93,8 @@
         var items = result.data;
 		  service.srvReadBooks = result.data;
 		  console.log("service: getReadBooks");
-		  console.log("service: srvReadBooks: ",srvReadBooks);
+		  console.log("service: service.srvReadBooks: ",service.srvReadBooks);
+		  console.log("service: items (read): ",items);
         return items;
       }, function (errorResponse){
         console.log("error message: ", errorResponse.message);
