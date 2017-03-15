@@ -39,6 +39,8 @@
       });
       promise.then(function (result){
         var items = result.data;
+		  console.log("service: addBook");
+		  console.log("service: srvReadBooks: ",srvReadBooks);
         return items;
       }, function (errorResponse){
         console.log("error message: ", errorResponse.message);
@@ -53,6 +55,8 @@
       });
       promise.then(function (result){
         var items = result.data;
+		  console.log("service: deleteBook");
+		  console.log("service: srvReadBooks: ",srvReadBooks);
         return items;
       }, function (errorResponse){
         //console.log("error message: ", errorResponse.message);
