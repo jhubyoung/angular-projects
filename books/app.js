@@ -120,7 +120,7 @@
       promise.then(function(response){
 			//$scope.$digest();
         bookList.books = response.data;
-		  $rootScope.$broadcast('bookListEvent', bookList);
+		  //$rootScope.$broadcast('bookListEvent', bookList);
         console.log("book read, bookList.books: ",bookList.books);
       });
     }
@@ -132,14 +132,15 @@
     var readBooks = this;
 	 //$scope.$on('bookList', function(event, ) {
 		 var promise = BookListService.getReadBooks();
-		 $scope.$on('bookListEvent', function(event, promise) {
+		 //$scope.$on('bookListEvent', function(event, promise) {
 			 console.log("ReadBooksController, caught bookListEvent");
 			 promise.then(function(response){
 				//$scope.$digest();
 				readBooks.books = response.data;
 				console.log("readBooks.books: ",readBooks.books);
 			 });
-		 });
+			 
+		 //});
 		 //$scope.$on('bookListEvent', function(event, promise) {
 			 //console.log("ReadBooksController, caught bookListEvent");
 		 //}
