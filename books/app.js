@@ -13,7 +13,7 @@
   function BookListService($http){
     var service=this;
     var endpoint = "https://shielded-ridge-23814.herokuapp.com/";
-	 var this.srvReadBooks;
+	 var service.srvReadBooks;
 	 
     service.getBooks = function(){
       var endpoint1=endpoint+"unreadbooks";
