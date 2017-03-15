@@ -92,7 +92,7 @@
 
   BookListController.$inject = ['BookListService','$scope'];
   function BookListController(BookListService,$scope){
-    //$scope.source = BookListService;
+    $scope.source = BookListService;
     var bookList = this;
     var promise = BookListService.getBooks();
     promise.then(function(response){
