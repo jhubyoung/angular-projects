@@ -73,6 +73,7 @@
         var items = result.data;
 		  console.log("service: readBook");
 		  console.log("service: srvReadBooks: ",srvReadBooks);
+		  srvReadBooks.splice(0, srvReadBooks.length);
 		  console.log("service: srvReadBooks: ",srvReadBooks);
         return items;
       }, function (errorResponse){
