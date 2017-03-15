@@ -73,10 +73,10 @@
         var items = result.data;
 		  console.log("service: readBook");
 		  console.log("service: srvReadBooks: ",srvReadBooks);
-		  console.log("service: readBook.items: ",items);
+		  console.log("service: readBook.items (unread): ",items);
 		  srvReadBooks.splice(0, srvReadBooks.length);
 		  console.log("service: srvReadBooks: ",srvReadBooks);
-		  console.log("service: readBook.items: ",items);
+		  console.log("service: readBook.items (unread): ",items);
         return items;
       }, function (errorResponse){
         //console.log("error message: ", errorResponse.message);
@@ -168,6 +168,9 @@
             }, function (newVal, oldVal) {
                 if ( newVal !== oldVal ) {
 						 console.log("ctrl, watch. oldVal: ",oldVal," newVal: ",newVal);
+                }
+                else {
+						 console.log("ctrl, watch (else). oldVal: ",oldVal," newVal: ",newVal);
                 }
             });
         }());
