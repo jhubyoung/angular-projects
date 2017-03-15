@@ -77,6 +77,9 @@
 		  //service.srvReadBooks.splice(0, service.srvReadBooks.length);
 		  //console.log("service: service.srvReadBooks: ",service.srvReadBooks);
 		  //console.log("service: readBook.items (unread): ",items);
+		  service.srvReadBooks=service.getReadBooks();
+		  console.log("service: service.srvReadBooks: ",service.srvReadBooks);
+		  console.log("----------------------");
         return items;
       }, function (errorResponse){
         //console.log("error message: ", errorResponse.message);
