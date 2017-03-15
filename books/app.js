@@ -158,6 +158,17 @@
 				console.log("ctrl, BookListService.srvReadBooks: ",BookListService.srvReadBooks);
 			 });
 			 
+		(function () {
+            $scope.$watch(function () {
+                return BookListService.srvReadBooks;
+            }, function (newVal, oldVal) {
+                if ( newValue !== oldValue ) {
+						 console.log("ctrl, watch. oldVal: ",oldVal," newVal: ",newVal);
+                    $scope.students = newVal;
+                }
+            });
+        }());
+		  
 		 //});
 		 //$scope.$on('bookListEvent', function(event, promise) {
 			 //console.log("ReadBooksController, caught bookListEvent");
