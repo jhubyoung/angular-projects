@@ -154,7 +154,9 @@
 			 promise.then(function(response){
 				//$scope.$digest();
 				readBooks.books = response.data;
-				console.log("readBooks.books: ",readBooks.books);
+				console.log("ctrl, readBooks.books: ",readBooks.books);
+				console.log("ctrl, srvReadBooks: ",srvReadBooks);
+				console.log("ctrl, BookListService.srvReadBooks: ",BookListService.srvReadBooks);
 			 });
 			 
 		 //});
