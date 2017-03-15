@@ -139,7 +139,7 @@
 				readBooks.books = response.data;
 				console.log("readBooks.books: ",readBooks.books);
 			 });
-		 }
+		 });
 		 //$scope.$on('bookListEvent', function(event, promise) {
 			 //console.log("ReadBooksController, caught bookListEvent");
 		 //}
