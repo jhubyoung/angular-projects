@@ -16,13 +16,14 @@
 	 var srvReadBooks;
 	 
     service.getBooks = function(){
-      //var endpoint1xxx=endpoint+"allbooks";
       var endpoint1=endpoint+"unreadbooks";
       var promise = $http({
         url: endpoint1
       });
       promise.then(function (result){
         var items = result.data;
+		  console.log("service: getBooks");
+		  console.log("service: srvReadBooks: ",srvReadBooks);
         return items;
       }, function (errorResponse){
         //console.log("error message: ", errorResponse.message);
