@@ -13,7 +13,7 @@
   function BookListService($http){
     var service=this;
     var endpoint = "https://shielded-ridge-23814.herokuapp.com/";
-	 var readBooks;
+	 var srvReadBooks;
 	 
     service.getBooks = function(){
       //var endpoint1xxx=endpoint+"allbooks";
@@ -80,7 +80,9 @@
       });
       promise.then(function (result){
         var items = result.data;
+		  srvReadBooks = result.data;
 		  console.log("service: getReadBooks");
+		  console.log("service: srvReadBooks: ",srvReadBooks);
         return items;
       }, function (errorResponse){
         console.log("error message: ", errorResponse.message);
