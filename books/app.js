@@ -127,7 +127,7 @@
   }
   
 	ReadBooksController.$inject = ['BookListService','$scope'];
-  function ReadBooksController(BookListService,$scope){
+  function ReadBooksController(BookListService,$scope,$rootScope){
     //$scope.source = BookListService;
     var readBooks = this;
 	 $scope.$watch('bookList', function() {
