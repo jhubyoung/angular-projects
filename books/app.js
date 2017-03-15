@@ -60,7 +60,6 @@
         url: endpoint4
       });
       promise.then(function (result){
-			$scope.$digest();
         var items = result.data;
         return items;
       }, function (errorResponse){
@@ -131,6 +130,7 @@
     var readBooks = this;
     var promise = BookListService.getReadBooks();
     promise.then(function(response){
+		$scope.$digest();
       readBooks.books = response.data;
       console.log("readBooks.books: ",readBooks.books);
     });
