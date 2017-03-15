@@ -130,7 +130,7 @@
   function ReadBooksController(BookListService,$scope,$rootScope){
     //$scope.source = BookListService;
     var readBooks = this;
-	 $scope.$watch('bookList', function() {
+	 $scope.$on('bookList', function(event, bookList) {
     var promise = BookListService.getReadBooks();
     promise.then(function(response){
 		//$scope.$digest();
