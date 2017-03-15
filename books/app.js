@@ -133,7 +133,7 @@
 	 //$scope.$on('bookList', function(event, ) {
 		 var promise = BookListService.getReadBooks();
 		 //$scope.$on('bookListEvent', function(event, promise) {
-			 console.log("ReadBooksController, caught bookListEvent");
+			 //console.log("ReadBooksController, caught bookListEvent");
 			 promise.then(function(response){
 				//$scope.$digest();
 				readBooks.books = response.data;
