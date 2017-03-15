@@ -142,9 +142,7 @@
     bookList.readBook = function(id){
       var promise = BookListService.readBook(id);
       promise.then(function(response){
-			//$scope.$digest();
         bookList.books = response.data;
-		  //$rootScope.$broadcast('bookListEvent', bookList);
         console.log("ctrl, book read, bookList.books: ",bookList.books);
       });
     }
@@ -152,57 +150,26 @@
   
 	ReadBooksController.$inject = ['BookListService','$scope','$rootScope'];
   function ReadBooksController(BookListService,$scope,$rootScope){
-    //$scope.source = BookListService;
     var readBooks = this;
-	 //$scope.$on('bookList', function(event, ) {
 		 var promise = BookListService.getReadBooks();
-		 //$scope.$on('bookListEvent', function(event, promise) {
-			 //console.log("ReadBooksController, caught bookListEvent");
 			 promise.then(function(response){
-				//$scope.$digest();
 				readBooks.books = response.data;
 				console.log("ctrl, readBooks.books: ",readBooks.books);
 				console.log("ctrl, BookListService.srvReadBooks: ",BookListService.srvReadBooks);
 			 });
 			 
-		
-		(function () {
-            $scope.$watch(function(){
+			(function () {
+			$scope.$watch(function(){
 				return BookListService.srvReadBooks;
-		}, function (newVal, oldVal) {
-					console.log("ctrl:watch");
-                if ( newVal !== oldVal ) {
-						 console.log("ctrl:watch. oldVal: ",oldVal," newVal: ",newVal);
-						 //readBooks.books=newVal;
-						 readBooks.books=BookListService.srvReadBooks;
-                }
+			}, function (newVal, oldVal) {
+				console.log("ctrl:watch");
+					if ( newVal !== oldVal ) {
+						console.log("ctrl:watch. oldVal: ",oldVal," newVal: ",newVal);
+						readBooks.books=BookListService.srvReadBooks;
+               }
             });
         }());
 		  
-		  
-		/*	 
-		(function () {
-            $scope.$watch(function () {
-					console.log("ctrl:watch");
-					console.log("ctrl:watch, BookListService.srvReadBooks: ",BookListService.srvReadBooks);
-					console.log("ctrl:watch, readBooks.books: ",readBooks.books);
-                return BookListService.srvReadBooks;
-            }, function (newVal, oldVal) {
-                if ( newVal !== oldVal ) {
-						 console.log("ctrl:watch. oldVal: ",oldVal," newVal: ",newVal);
-                }
-                else {
-						 console.log("ctrl:watch (else). oldVal: ",oldVal," newVal: ",newVal);
-                }
-            });
-        }());
-		  */
-		  
-		 //});
-		 //$scope.$on('bookListEvent', function(event, promise) {
-			 //console.log("ReadBooksController, caught bookListEvent");
-		 //}
-	 //},true);
   }
 
 })();
