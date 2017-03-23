@@ -162,8 +162,8 @@
 			console.log("book to be deleted, id: ",id);
 			var promise = BookListService.deleteBook(id);
 			promise.then(function(response){
-				console.log("book deleted, bookList.books: ",bookList.books);
-				readBooks.books = response.data;
+				console.log("book deleted");
+				//readBooks.books = response.data;
 			});
 		};
 
