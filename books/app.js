@@ -14,7 +14,7 @@
     var service=this;
     var endpoint = "https://shielded-ridge-23814.herokuapp.com/";
 	 var srvReadBooks;
-	 
+
     service.getBooks = function(){
       var endpoint1=endpoint+"unreadbooks";
       var promise = $http({
@@ -30,7 +30,7 @@
       });
       return promise;
     };
-	 
+
     service.addBook = function(title){
       var endpoint2=endpoint+"addbook";
       var promise = $http({
@@ -47,7 +47,7 @@
       });
       return promise;
     };
-	 
+
     service.deleteBook = function(id){
       var endpoint3=endpoint+"deletebook/" + id;
       var promise = $http({
@@ -63,7 +63,7 @@
       });
       return promise;
     };
-	 
+
     service.readBook = function(id){
       var endpoint4=endpoint+"readbook/" + id;
       var promise = $http({
@@ -86,7 +86,7 @@
       });
       return promise;
     };
-	 
+
 	 service.getReadBooks = function(){
       var endpoint5=endpoint+"readbooks";
       var promise = $http({
@@ -147,7 +147,7 @@
       });
     }
   }
-  
+
 	ReadBooksController.$inject = ['BookListService','$scope','$rootScope'];
   function ReadBooksController(BookListService,$scope,$rootScope){
 		var readBooks = this;
@@ -157,7 +157,7 @@
 			//console.log("ctrl, readBooks.books: ",readBooks.books);
 			console.log("ctrl, BookListService.srvReadBooks: ",BookListService.srvReadBooks);
 		});
-			 
+
 		readBooks.deleteBook = function(id){
 			console.log("book to be deleted, id: ",id);
 			var promise = BookListService.deleteBook(id);
@@ -165,9 +165,9 @@
 				console.log("book deleted, bookList.books: ",bookList.books);
 				readBooks.books = response.data;
 			});
-		}
-		
-/*		
+		};
+
+/*
 		(function () {
 			$scope.$watch(function(){
 				return BookListService.srvReadBooks;
@@ -179,8 +179,8 @@
                }
             });
       }());
-*/		
-		  
+*/
+
   }
 
 })();
