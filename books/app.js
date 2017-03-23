@@ -120,8 +120,8 @@
     var bookList = this;
     var promise = BookListService.getBooks();
     promise.then(function(response){
+      console.log("ctrl, bookList.books: ",bookList.books);
       bookList.books = response.data;
-      //console.log("bookList.books: ",bookList.books);
     });
 
     bookList.saveNewBookTitle = function(){
@@ -159,11 +159,11 @@
 		});
 			 
 		readBooks.deleteBook = function(id){
-			var promise = BookListService.deleteBook(id);
 			console.log("book to be deleted, id: ",id);
+			var promise = BookListService.deleteBook(id);
 			promise.then(function(response){
-				readBooks.books = response.data;
 				console.log("book deleted, bookList.books: ",bookList.books);
+				readBooks.books = response.data;
 			});
 		}
 			 
