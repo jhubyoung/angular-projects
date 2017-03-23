@@ -167,7 +167,7 @@
 			});
 		};
 
-/*
+
 		(function () {
 			$scope.$watch(function(){
 				return BookListService.srvReadBooks;
@@ -179,7 +179,7 @@
                }
             });
       }());
-*/
+
 
   }
 
