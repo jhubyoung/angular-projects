@@ -166,7 +166,8 @@
 				readBooks.books = response.data;
 			});
 		}
-			 
+		
+/*		
 		(function () {
 			$scope.$watch(function(){
 				return BookListService.srvReadBooks;
@@ -178,6 +179,7 @@
                }
             });
       }());
+*/		
 		  
   }
 
