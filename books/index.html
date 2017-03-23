@@ -43,8 +43,8 @@
     <h1>Books Read</h1>
     <div class="form-group">
 		<div ng-repeat="book in readBooks.books">
-		<button class="btn btn-primary" ng-click="bookList.deleteBook(book.id);">Delete</button> 
-      <h3>{{book.date | date:'MM/dd/yyyy'}}: {{book.title}}</h3>
+		<button class="btn btn-primary" ng-click="readBooks.deleteBook(book.id);">Delete</button> 
+      {{book.date | date:'MM/dd/yyyy'}}: {{book.title}}
 		</div>
     </div>
   </div>

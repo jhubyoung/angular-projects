@@ -150,15 +150,23 @@
   
 	ReadBooksController.$inject = ['BookListService','$scope','$rootScope'];
   function ReadBooksController(BookListService,$scope,$rootScope){
-    var readBooks = this;
-		 var promise = BookListService.getReadBooks();
-			 promise.then(function(response){
-				readBooks.books = response.data;
-				//console.log("ctrl, readBooks.books: ",readBooks.books);
-				console.log("ctrl, BookListService.srvReadBooks: ",BookListService.srvReadBooks);
-			 });
+		var readBooks = this;
+		var promise = BookListService.getReadBooks();
+		promise.then(function(response){
+			readBooks.books = response.data;
+			//console.log("ctrl, readBooks.books: ",readBooks.books);
+			console.log("ctrl, BookListService.srvReadBooks: ",BookListService.srvReadBooks);
+		});
 			 
-			(function () {
+		readBooks.deleteBook = function(id){
+			var promise = BookListService.deleteBook(id);
+			promise.then(function(response){
+				readBooks.books = response.data;
+				//console.log("book deleted, bookList.books: ",bookList.books);
+			});
+		}
+			 
+		(function () {
 			$scope.$watch(function(){
 				return BookListService.srvReadBooks;
 			}, function (newVal, oldVal) {
@@ -168,7 +176,7 @@
 						readBooks.books=BookListService.srvReadBooks;
                }
             });
-        }());
+      }());
 		  
   }
 
