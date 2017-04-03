@@ -36,7 +36,7 @@
 
 	<div class="col-md-6">
 		<table class="table table-striped">
-			<thead><tr><th>Title</th><th colspan="2" style=""text-align:center"">Actions</th></tr></thead>
+			<thead><tr><th>Title</th><th colspan="2" style="text-align:center">Actions</th></tr></thead>
 			<tbody>
 				<tr ng-repeat="book in bookList.books">
 					<td>{{book.title}}</td>
@@ -49,13 +49,29 @@
   </div>
   
   <div class="container" ng-controller="ReadBooksController as readBooks">
-    <h1>Books Read</h1>
+    <h3>Books Read</h3>
+	 
     <div class="form-group">
 		<div ng-repeat="book in readBooks.books">
 		<button class="btn btn-xs btn-danger" ng-click="readBooks.deleteBook(book.id);">Delete</button> 
       {{book.date | date:'MM/dd/yyyy'}}: {{book.title}}
 		</div>
     </div>
+	 
+	 <div class="col-md-6">
+		<table class="table table-striped">
+			<thead><tr><th>Date</th><th>Title</th><th>Actions</th></tr></thead>
+			<tbody>
+				<tr ng-repeat="book in bookList.books">
+					<td>{{book.date | date:'MM/dd/yyyy'}}</td>
+					<td>{{book.title}}</td>
+					<td><button class="btn btn-xs btn-link" ng-click="readBooks.deleteBook(book.id);">Delete</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	 
+	 
   </div>
   
   </body>
