@@ -20,7 +20,7 @@
 
   <div class="container" ng-controller="BookListController as bookList">
 	<div class="jumbotron">
-		<h1>Book List</h1>
+		<h2>Book List</h2>
 		<p>Below are the lists of books that I would like to read, and also those that I have read.</p>
 	</div>
     <div class="form-group">
@@ -36,7 +36,7 @@
 
 	<div class="col-md-6">
 		<table class="table table-striped">
-			<thead><tr><th>Title</th><th colspan="2">Action</th></tr></thead>
+			<thead><tr><th>Title</th><th colspan="2" style=""text-align:center"">Actions</th></tr></thead>
 			<tbody>
 				<tr ng-repeat="book in bookList.books">
 					<td>{{book.title}}</td>
