@@ -40,8 +40,8 @@
 			<tbody>
 				<tr ng-repeat="book in bookList.books">
 					<td>{{book.title}}</td>
-					<td><button class="btn btn-xs btn-primary" ng-click="bookList.readBook(book.id);">Read</button></td>
-					<td><button class="btn btn-xs btn-danger" ng-click="bookList.deleteBook(book.id);">Delete</button></td>
+					<td><button class="btn btn-xs btn-link" ng-click="bookList.readBook(book.id);">Read</button></td>
+					<td><button class="btn btn-xs btn-link" ng-click="bookList.deleteBook(book.id);">Delete</button></td>
 				</tr>
 			</tbody>
 		</table>
