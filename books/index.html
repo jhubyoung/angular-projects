@@ -64,7 +64,7 @@
 		<table class="table table-striped tablesorter" id="readBooksTable">
 			<thead><tr><th>Date</th><th>Title</th><th>Actions</th></tr></thead>
 			<tbody>
-				<tr ng-repeat="book in readBooks.books  | orderBy:'title':sortReverse" >
+				<tr ng-repeat="book in readBooks.books  | orderBy:'title'" >
 					<td>{{book.date | date:'MM/dd/yyyy'}}</td>
 					<td>{{book.title}}</td>
 					<td><button class="btn btn-xs btn-link" ng-click="readBooks.deleteBook(book.id);">Delete</button></td>
