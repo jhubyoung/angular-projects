@@ -19,8 +19,7 @@
     <loading class="loading-indicator"></loading>
 
     <div class="container" ng-controller="BookListController as bookList">
-    <div class="jumbotron">Book List</div>
-    <h1>Book List</h1>
+    <div class="jumbotron"><h1>Book List</h1></div>
     <div class="form-group">
         <input type="text" placeholder="book title"
         class="form-control" ng-model="bookList.newBookTitle">
@@ -33,10 +32,10 @@
     <br><br>
 
     <div class="form-group">
-      <h3 ng-repeat="book in bookList.books">
-        <button class="btn btn-primary" ng-click="bookList.readBook(book.id);">Read</button>
-        <button class="btn btn-primary" ng-click="bookList.deleteBook(book.id);">Delete</button> 
-		{{book.title}}</h3>
+      <div ng-repeat="book in bookList.books">
+        <button class="btn btn-xs btn-primary" ng-click="bookList.readBook(book.id);">Read</button>
+        <button class="btn btn-xs btn-danger" ng-click="bookList.deleteBook(book.id);">Delete</button> 
+		{{book.title}}</div>
     </div>
   </div>
   
@@ -44,7 +43,7 @@
     <h1>Books Read</h1>
     <div class="form-group">
 		<div ng-repeat="book in readBooks.books">
-		<button class="btn btn-primary" ng-click="readBooks.deleteBook(book.id);">Delete</button> 
+		<button class="btn btn-xs btn-danger" ng-click="readBooks.deleteBook(book.id);">Delete</button> 
       {{book.date | date:'MM/dd/yyyy'}}: {{book.title}}
 		</div>
     </div>
