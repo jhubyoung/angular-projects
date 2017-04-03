@@ -13,7 +13,10 @@
     <link rel="stylesheet" href="styles/common.css">
 	 <script type="text/javascript">
 	 $(document).ready(function() {
-		$('#readBooksTable').DataTable();
+		$('#readBooksTable').DataTable({
+			ordering: true
+		}
+	 );
 	 } );
 	</script>
     <title>Book List</title>
