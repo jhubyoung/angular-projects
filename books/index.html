@@ -42,11 +42,15 @@
 		</div>
 	</div>
 	<div class="col-md-6">
-		<div ng-repeat="book in bookList.books">
-			<button class="btn btn-xs btn-primary" ng-click="bookList.readBook(book.id);">Read</button>
-			<button class="btn btn-xs btn-danger" ng-click="bookList.deleteBook(book.id);">Delete</button> 
-			{{book.title}}
-		</div>
+		<table class="table table-striped">
+			<thead><tr><th>Title</th><th>Read</th><th>Delete</th></tr></thead>
+			<tbody ng-repeat="book in bookList.books">
+				<tr><td>{{book.title}}</td>
+					<td><button class="btn btn-xs btn-primary" ng-click="bookList.readBook(book.id);">Read</button></td>
+					<td><button class="btn btn-xs btn-danger" ng-click="bookList.deleteBook(book.id);">Delete</button></td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
   </div>
   
