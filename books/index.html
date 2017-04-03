@@ -18,7 +18,7 @@
     <!-- Fixed position loading indicator -->
     <loading class="loading-indicator"></loading>
 
-    <div class="container" ng-controller="BookListController as bookList">
+  <div class="container" ng-controller="BookListController as bookList">
 	<div class="jumbotron">
 		<h1>Book List</h1>
 		<p>Below are the lists of books that I would like to read, and also those that I have read.</p>
@@ -34,12 +34,20 @@
     </div>
     <br><br><p>
 
-    <div class="form-group">
-      <div ng-repeat="book in bookList.books">
-        <button class="btn btn-xs btn-primary" ng-click="bookList.readBook(book.id);">Read</button>
-        <button class="btn btn-xs btn-danger" ng-click="bookList.deleteBook(book.id);">Delete</button> 
-		{{book.title}}</div>
-    </div>
+	<div class="form-group">
+		<div ng-repeat="book in bookList.books">
+			<button class="btn btn-xs btn-primary" ng-click="bookList.readBook(book.id);">Read</button>
+			<button class="btn btn-xs btn-danger" ng-click="bookList.deleteBook(book.id);">Delete</button> 
+			{{book.title}}
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div ng-repeat="book in bookList.books">
+			<button class="btn btn-xs btn-primary" ng-click="bookList.readBook(book.id);">Read</button>
+			<button class="btn btn-xs btn-danger" ng-click="bookList.deleteBook(book.id);">Delete</button> 
+			{{book.title}}
+		</div>
+	</div>
   </div>
   
   <div class="container" ng-controller="ReadBooksController as readBooks">
