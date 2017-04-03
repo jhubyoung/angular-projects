@@ -68,7 +68,8 @@
 				<th>Actions</th>
 			</tr></thead>
 			<tbody>
-				<tr ng-repeat="book in readBooks.books  | orderBy:propertyName:reverse" >
+				<!--tr ng-repeat="book in readBooks.books  | orderBy:propertyName:reverse"-->
+				<tr ng-repeat="book in readBooks.books  | orderBy:'-title'">
 					<td>{{book.date | date:'MM/dd/yyyy'}}</td>
 					<td>{{book.title}}</td>
 					<td><button class="btn btn-xs btn-link" ng-click="readBooks.deleteBook(book.id);">Delete</button></td>
