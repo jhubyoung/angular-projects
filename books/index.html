@@ -44,8 +44,9 @@
 	<div class="col-md-6">
 		<table class="table table-striped">
 			<thead><tr><th>Title</th><th>Read</th><th>Delete</th></tr></thead>
-			<tbody ng-repeat="book in bookList.books">
-				<tr><td>{{book.title}}</td>
+			<tbody>
+				<tr ng-repeat="book in bookList.books">
+					<td>{{book.title}}</td>
 					<td><button class="btn btn-xs btn-primary" ng-click="bookList.readBook(book.id);">Read</button></td>
 					<td><button class="btn btn-xs btn-danger" ng-click="bookList.deleteBook(book.id);">Delete</button></td>
 				</tr>
