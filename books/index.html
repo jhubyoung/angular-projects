@@ -62,7 +62,7 @@
 		<table class="table table-striped">
 			<thead><tr><th>Date</th><th>Title</th><th>Actions</th></tr></thead>
 			<tbody>
-				<tr ng-repeat="book in bookList.books">
+				<tr ng-repeat="book in readBooks.books">
 					<td>{{book.date | date:'MM/dd/yyyy'}}</td>
 					<td>{{book.title}}</td>
 					<td><button class="btn btn-xs btn-link" ng-click="readBooks.deleteBook(book.id);">Delete</button></td>
