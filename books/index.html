@@ -58,13 +58,13 @@
   </div>
   
   <div class="container" ng-controller="ReadBooksController as readBooks">
-    <h3>Booksz Read</h3>
+    <h3>Bookszs Read</h3>
 	 
 	 <div class="col-md-6">
 		<table class="table table-striped tablesorter" id="readBooksTable">
 			<thead><tr><th>Date</th><th>Title</th><th>Actions</th></tr></thead>
 			<tbody>
-				<tr ng-repeat="book in readBooks.books">
+				<tr ng-repeat="book in readBooks.books  | orderBy:'title':sortReverse" >
 					<td>{{book.date | date:'MM/dd/yyyy'}}</td>
 					<td>{{book.title}}</td>
 					<td><button class="btn btn-xs btn-link" ng-click="readBooks.deleteBook(book.id);">Delete</button></td>
