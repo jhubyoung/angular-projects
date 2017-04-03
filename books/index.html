@@ -8,15 +8,15 @@
     <script src="common/common.module.js"></script>
     <script src="common/loading/loading.component.js"></script>
     <script src="common/loading/loading.interceptor.js"></script>
+	 <script src="jquery.tablesorter.min.js"></script>
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/common.css">
 	 <script type="text/javascript">
 	 $(document).ready(function() {
-		$('#readBooksTable').DataTable({
-			ordering: true
-		}
-	 );
+		$(function(){
+			$("#readBooksTable").tablesorter();
+		});
 	 } );
 	</script>
     <title>Book List</title>
@@ -57,10 +57,10 @@
   </div>
   
   <div class="container" ng-controller="ReadBooksController as readBooks">
-    <h3>Books Read</h3>
+    <h3>Bookss Read</h3>
 	 
 	 <div class="col-md-6">
-		<table class="table table-striped" id="readBooksTable">
+		<table class="table table-striped" class="tablesorter" id="readBooksTable">
 			<thead><tr><th>Date</th><th>Title</th><th>Actions</th></tr></thead>
 			<tbody>
 				<tr ng-repeat="book in readBooks.books">
