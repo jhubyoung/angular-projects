@@ -58,13 +58,13 @@
   </div>
   
   <div class="container" ng-controller="ReadBooksController as readBooks">
-    <h3>Bookszsab Read</h3>
+    <h3>Bookszsabc Read</h3>
 	 
 	 <div class="col-md-6">
 		<table class="table table-striped" id="readBooksTable">
 			<thead><tr>
 				<th>Date</th>
-				<th>Title<span class="sortorder" ng-show="propertyName === 'title'" ng-class="{reverse: reverse}"></span></th>
+				<th><button ng-click="sortBy('title')">Title</button><span class="sortorder" ng-show="propertyName === 'title'" ng-class="{reverse: reverse}"></span></th>
 				<th>Actions</th>
 			</tr></thead>
 			<tbody>
