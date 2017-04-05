@@ -13,13 +13,13 @@
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/common.css">
-	 <script type="text/javascript">
+	 <!--script type="text/javascript">
 	 $(document).ready(function() {
 		$(function(){
 			$("#readBooksTableNone").tablesorter();
 		});
 	 } );
-	</script>
+	</script-->
     <title>Book List</title>
   </head>
   <body>
@@ -58,7 +58,7 @@
   </div>
   
   <div class="container" ng-controller="ReadBooksController as readBooks">
-    <h3>Bookszsabcdefg Read</h3>
+    <h3>Books Read</h3>
 	 
 	 <div class="col-md-6">
 		<table class="table table-striped" id="readBooksTableNew">
@@ -70,7 +70,7 @@
 			</tr></thead>
 			<tbody>
 				<!--tr ng-repeat="book in readBooks.books  | orderBy:propertyName:reverse"-->
-				<tr ng-repeat="book in readBooks.books  | orderBy:'-date'">
+				<tr ng-repeat="book in readBooks.books  | orderBy:'date'">
 					<td>{{book.date | date:'MM/dd/yyyy'}}</td>
 					<td>{{book.title}}</td>
 					<td><button class="btn btn-xs btn-link" ng-click="readBooks.deleteBook(book.id);">Delete</button></td>
