@@ -152,6 +152,7 @@
   function ReadBooksController(BookListService,$scope,$rootScope){
 		var readBooks = this;
 		readBooks.sortType = 'date';
+		readBooks.sortReverse = 'true';
 		var promise = BookListService.getReadBooks();
 		promise.then(function(response){
 			readBooks.books = response.data;
