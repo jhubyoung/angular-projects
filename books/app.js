@@ -151,6 +151,7 @@
 	ReadBooksController.$inject = ['BookListService','$scope','$rootScope'];
   function ReadBooksController(BookListService,$scope,$rootScope){
 		var readBooks = this;
+		readBooks.sortType = 'title';
 		var promise = BookListService.getReadBooks();
 		promise.then(function(response){
 			readBooks.books = response.data;
