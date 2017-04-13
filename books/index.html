@@ -58,32 +58,14 @@
   </div>
   
   <div class="container" ng-controller="ReadBooksController as readBooks">
-    <h3>Bookszabcde Read</h3>
-
-	 
-	 <div class="col-md-6">
-		<table class="table table-striped" id="readBooksTableNew">
-			<thead><tr>
-				<th>Date</th>
-				<th><button class="btn btn-lg btn-link" ng-click="sortBy('title')"><b>Title</b></button>
-					<span class="sortorder" ng-show="propertyName === 'title'" ng-class="{reverse: reverse}"></span></th>
-				<th>Actions</th>
-			</tr></thead>
-			<tbody>
-				<!--tr ng-repeat="book in readBooks.books  | orderBy:propertyName:reverse"-->
-				<tr ng-repeat="book in readBooks.books  | orderBy:'date':true">
-					<td>{{book.date | date:'MM/dd/yyyy'}}</td>
-					<td>{{book.title}}</td>
-					<td><button class="btn btn-xs btn-link" ng-click="readBooks.deleteBook(book.id);">Delete</button></td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+    <h3>Books Read</h3>
 
 	<div class="col-md-6">
 		<table class="table table-striped" id="readBooksTable">
 			<thead><tr>
-				<th><a href="#" ng-click="readBooks.sortType='date';readBooks.sortReverse = !readBooks.sortReverse">Date</a></th>
+				<th><a href="#" ng-click="readBooks.sortType='date';readBooks.sortReverse = !readBooks.sortReverse">Date
+					<span ng-show="readBooks.sortType == 'date' && !readBooks.sortReverse" class="fa fa-caret-down"></span>
+					<span ng-show="readBooks.sortType == 'date' && readBooks.sortReverse" class="fa fa-caret-up"></span</a></th>
 				<th><a href="#" ng-click="readBooks.sortType='title';readBooks.sortReverse = !readBooks.sortReverse">Title</a></th>
 				<th>Actions</th>
 			</tr></thead>
