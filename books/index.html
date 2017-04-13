@@ -11,9 +11,7 @@
 	 <!--script src="jquery-3.2.0.slim.min.js"></script>
 	 <script src="jquery.tablesorter.min.js"></script-->
     <link rel="stylesheet" href="styles/bootstrap.min.css">
-	 <!--link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/sandstone/bootstrap.min.css">
-	 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" -->
-	 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/common.css">
 	 <!--script type="text/javascript">
@@ -61,7 +59,7 @@
   </div>
   
   <div class="container" ng-controller="ReadBooksController as readBooks">
-    <h3>BooksABCD Read</h3>
+    <h3>BooksABCDE Read</h3>
 
 	<div class="col-md-6">
 		<table class="table table-striped" id="readBooksTable">
@@ -69,6 +67,7 @@
 				<th><a href="#" ng-click="readBooks.sortType='date';readBooks.sortReverse = !readBooks.sortReverse">Date
 					<span ng-show="readBooks.sortType == 'date' && !readBooks.sortReverse" class="fa fa-caret-down"></span>
 					<span ng-show="readBooks.sortType == 'date' && readBooks.sortReverse" class="fa fa-caret-up"></span>
+					<i class="fa fa-caret-down" aria-hidden="true"></i>
 					</a></th>
 				<th><a href="#" ng-click="readBooks.sortType='title';readBooks.sortReverse = !readBooks.sortReverse">Title</a></th>
 				<th>Actions</th>
