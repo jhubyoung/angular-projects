@@ -58,12 +58,14 @@
   </div>
   
   <div class="container" ng-controller="ReadBooksController as readBooks">
-    <h3>BooksA Read</h3>
+    <h3>BooksAB Read</h3>
 
 	<div class="col-md-6">
 		<table class="table table-striped" id="readBooksTable">
 			<thead><tr>
 				<th><a href="#" ng-click="readBooks.sortType='date';readBooks.sortReverse = !readBooks.sortReverse">Date
+					<span ng-show="readBooks.sortType == 'date'" class="fa fa-caret-down">down 1</span>
+					<span ng-show="!readBooks.sortReverse" class="fa fa-caret-down">down 2</span>
 					<span ng-show="readBooks.sortType == 'date' && !readBooks.sortReverse" class="fa fa-caret-down"></span>
 					<span ng-show="readBooks.sortType == 'date' && readBooks.sortReverse" class="fa fa-caret-up"></span>
 					</a></th>
