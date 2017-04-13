@@ -58,7 +58,7 @@
   </div>
   
   <div class="container" ng-controller="ReadBooksController as readBooks">
-    <h3>BooksABCD Read</h3>
+    <h3>BooksABCDE Read</h3>
 
 	<div class="col-md-6">
 		<table class="table table-striped" id="readBooksTable">
@@ -67,7 +67,7 @@
 					<span ng-show="!readBooks.sortReverse" class="fa fa-caret-down">down 2</span>
 					<span ng-show="readBooks.sortType == 'date' && !readBooks.sortReverse" class="glyphicon glyphicon-chevron-down"></span>
 					<span ng-show="readBooks.sortType == 'date' && readBooks.sortReverse" class="fa fa-caret-up"></span>
-					<span class="glyphicon glyphicon-chevron-up"></span>
+					<span class="glyphicon glyphicon-triangle-bottom"></span>
 					</a></th>
 				<th><a href="#" ng-click="readBooks.sortType='title';readBooks.sortReverse = !readBooks.sortReverse">Title</a></th>
 				<th>Actions</th>
