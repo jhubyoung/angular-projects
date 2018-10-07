@@ -1,2 +1,2 @@
 # angular-projects
-Angular Projects
+Root directory for AngularJS projects
